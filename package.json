@@ -1,0 +1,26 @@
+{
+  "name": "web-shop-project",
+  "version": "1.0.0",
+  "main": "src/server/server.js",
+  "scripts": {
+    "start": "node src/server/server.js",
+    "dev": "nodemon src/server/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "type": "module",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.3",
+    "cors": "^2.8.5",
+    "express": "^4.21.2",
+    "express-validator": "^7.2.1",
+    "jquery": "^3.7.1",
+    "mongoose": "^8.12.2",
+    "nodemon": "^3.1.9",
+    "winston": "^3.17.0"
+  }
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- 
+    create.html
+    
+    Name: Amanjot Singh
+    Date: March 1, 2025
+    Course: Web Development
+    
+    Form for creating new products or editing existing ones.
+  -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add/Edit Product | Aman's Market</title>
+  <link rel="shortcut icon" href="./assets/img/products/NoImage.jpg" type="image/x-icon">
+
+  <!-- Bootstrap CSS from node_modules -->
+  <link href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Font Awesome CSS from node_modules -->
+  <link href="../../node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link href="./assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container">
+    <header class="py-3 mb-4 border-bottom">
+      <div class="d-flex justify-content-between">
+        <a class="navbar-brand" href="index.html">Aman's Market</a>
+        <nav>
+          <ul class="nav">
+            <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="search.html" class="nav-link">Shop</a></li>
+            <li class="nav-item"><a href="create.html" class="nav-link active">Add Product</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="create-section py-5">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-8">
+              <div class="card shadow p-5">
+                <h2 class="text-center text-primary">Add New Product</h2>
+
+                <!-- Message box for general errors -->
+                <div id="message-box" class="alert alert-danger d-none"></div>
+
+                <!-- Product Form -->
+                <form id="product-form" novalidate>
+                  <!-- Product Name -->
+                  <div class="form-group mb-3">
+                    <label for="name" class="form-label">Product Name</label>
+                    <input type="text" id="name" name="name" class="form-control" required>
+                  </div>
+
+                  <!-- Product Price -->
+                  <div class="form-group mb-3">
+                    <label for="price" class="form-label">Price</label>
+                    <div class="input-group">
+                      <span class="input-group-text">$</span>
+                      <input type="number" class="form-control" id="price" name="price" step="0.01" min="0" required>
+                    </div>
+                  </div>
+
+                  <!-- Product Stock -->
+                  <div class="form-group mb-3">
+                    <label for="stock" class="form-label">Stock Quantity</label>
+                    <input type="number" class="form-control" id="stock" name="stock" min="0" required>
+                  </div>
+
+                  <!-- Product Description -->
+                  <div class="form-group mb-3">
+                    <label for="description" class="form-label">Product Description</label>
+                    <input type="text" class="form-control" id="description" name="description" rows="4"
+                      required></input>
+                  </div>
+
+                  <!-- Form Actions -->
+                  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <button id="submit-button" type="submit" class="btn btn-primary">Create Product</button>
+                    <a href="search.html" class="btn btn-outline-secondary me-md-2">Cancel</a>
+                  </div>
+                </form>
+
+                <!-- Spinner -->
+                <div id="spinner" class="text-center d-none">
+                  <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <p>Processing, please wait...</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-3 my-4 border-top">
+      <span id="copyright" class="text-center text-muted">© </span>
+    </footer>
+
+    <!-- Error container (hidden by default) -->
+    <div id="error-container" class="alert alert-danger position-fixed bottom-0 end-0 m-3" style="display: none;"></div>
+
+    <script src="../../node_modules/jquery/dist/jquery.slim.min.js"></script>
+    <script src="../../node_modules/@popperjs/core/dist/umd/popper.min.js"></script>
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  
+    <!-- Custom Scripts -->
+    <script type="module" src="app/app.js"></script>
+    <script type="module" src="app/products/create.js"></script>
+</body>
+
+</html>

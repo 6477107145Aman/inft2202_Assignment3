@@ -1,0 +1,265 @@
+/**
+ * styles.css
+ * 
+ * Name: Amanjot Singh
+ * Date: March 1, 2025
+ * Course: Web Development
+ * 
+ * Custom styles that extend Bootstrap for the web shop.
+ */
+
+/* Global Styles */
+:root {
+  --primary-color: #4e73df;
+  --secondary-color: #f8f9fc;
+  --accent-color: #f6c23e;
+  --text-dark: #5a5c69;
+  --text-light: #f8f9fc;
+  --success-color: #1cc88a;
+  --danger-color: #e74a3b;
+  --warning-color: #f6c23e;
+  --info-color: #36b9cc;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/* Navigation */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 4rem 0;
+}
+
+/* Product Cards */
+.product-card {
+  border: 1px solid rgba(0, 0, 0, 0.125);
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card-image {
+  height: 300px;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.product-card:hover .card-image img {
+  transform: scale(1.05);
+}
+
+.card-content {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-name {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-price {
+  font-weight: bold;
+  color: var(--primary-color);
+  font-size: 1.125rem;
+  margin-bottom: 0.5rem;
+}
+
+.product-stock {
+  font-size: 0.875rem;
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+}
+
+.product-description {
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+/* Form Styling */
+.error-field {
+  border-color: var(--danger-color) !important;
+}
+
+.valid-field {
+  border-color: var(--success-color) !important;
+}
+
+.field-error {
+  color: var(--danger-color);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+/* Error Container */
+#error-container {
+  z-index: 1050;
+  max-width: 500px;
+}
+
+/* Featured Products */
+.featured-products .card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featured-products .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Carousel */
+.carousel-item img {
+  border-radius: 0.5rem;
+}
+
+/* Pagination */
+.pagination {
+  justify-content: center;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;
+}
+
+/* About Page */
+.about-section .card {
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-section .card-title {
+  color: var(--primary-color);
+  border-bottom: 2px solid var(--secondary-color);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 767px) {
+  .card-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .card-actions .btn {
+    width: 100%;
+  }
+
+  .hero-section {
+    padding: 2rem 0;
+  }
+
+  .featured-products .card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Search Page */
+.shop-header {
+  background-color: #f8f9fc;
+  padding: 2rem 0;
+  margin-bottom: 1rem;
+}
+
+#search-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Create/Edit Page */
+.create-section .card {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.create-section .card-header {
+  background-color: var(--primary-color);
+}
+
+.form-label {
+  font-weight: 500;
+}
+
+/* Utility Classes */
+.text-primary {
+  color: var(--primary-color) !important;
+}
+
+.text-secondary {
+  color: var(--text-dark) !important;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #4062c5;
+  border-color: #4062c5;
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+/* Modal styling */
+.modal-header {
+  border-bottom: 1px solid #dee2e6;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+}
+
+#spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  z-index: 1000;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
